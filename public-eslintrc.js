@@ -1,12 +1,21 @@
 module.exports = {
-  extends: "eslint:recommended",
-  env: {
+  extends: "eslint:recommended",  //启用默认推荐的规则
+  env: {  //使用的环境
     node: true,
-    browser: true
+    browser: true,
+    "es6": true  //支持es6全局变量
   },
-  parserOptions: {
+  parserOptions: {  //设置支持es6
     "ecmaVersion": 6
   },
+  "parser": "esprima",  //指定该npm模块作为解析器
+  "globals":{  //全局变量
+      "var1": true,  //允许被重写
+      "var2": false  //不允许被重写
+  },
+  "plugins": [  //引入插件
+    
+  ],
   rules: {
     /* 缩进 */
     "indent": ["error", 2],  
